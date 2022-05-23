@@ -12,7 +12,7 @@ docker build -t kolodgeeva/centos-tomcat .
 Put your war under the `/opt/tomcat/webapps` directory and run the following command.
 
 ```sh
-docker run -v /opt/tomcat/webapps:/opt/tomcat/webapps -v /opt/tomcat/logs:/opt/tomcat/logs -p 8080:8080 -i -t --name centos-tomcat kirillf/centos-tomcat
+docker run -v /opt/tomcat/webapps:/opt/tomcat/webapps -v /opt/tomcat/logs:/opt/tomcat/logs -p 8080:8080 -i -t --name centos-tomcat kolodgeeva/centos-tomcat
 ```
 
 Once you run it, you can start the container with `docker start centos-tomcat` in next time and log file will be under the `/opt/tomcat/logs` directory.
