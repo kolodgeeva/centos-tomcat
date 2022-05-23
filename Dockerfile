@@ -4,14 +4,12 @@ MAINTAINER kolodgeeva
 
 # Install prepare infrastructure
 RUN yum -y update && yum -y install wget && \
- yum -y install tar
- \
-# Install haveged
-RUN wget https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm
-RUN wget https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/h/haveged-1.9.14-1.el8.x86_64.rpm
-RUN rpm -Uvh epel-release-7-14.noarch.rpm
-RUN yum -y install haveged
-RUN chkconfig haveged on
+  yum -y install tar && \
+  wget https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm && \
+  wget https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/h/haveged-1.9.14-1.el8.x86_64.rpm && \
+  rpm -Uvh epel-release-7-14.noarch.rpm && \
+  yum -y install haveged && \
+  chkconfig haveged on
 
 # Prepare environment 
 ENV JAVA_HOME /usr/java/latest
